@@ -1,2 +1,2 @@
 # edgex-deployment
-IOT deployment model based on edgex
+A model IOT deployment based on edgex foundry

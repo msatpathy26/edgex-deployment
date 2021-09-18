@@ -1,0 +1,21 @@
+version: '2'
+
+services: 
+#Mosquitto
+  mqtt:
+    container_name: mosquitto
+    image: eclipse-mosquitto:2.0.11
+    restart: always
+    network_mode: "host"
+    ports:
+       - "1883:1883"
+       - "9001:9001"
+    volumes:
+       - /mqtt-config-host-path/:/mosquitto/config:ro
+       - /mqtt-data-host-path/:/mosquitto/data
+       - /mqtt-log-host-path/:/mosquitto/log
+volumes:
+    config:
+    data:
+    log:
+

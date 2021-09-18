@@ -1,0 +1,21 @@
+version: '2'
+
+services: 
+#Mosquitto
+  mqtt:
+    container_name: mosquitto
+    image: eclipse-mosquitto:2.0.11
+    restart: always
+    network_mode: "host"
+    ports:
+       - "1883:1883"
+       - "9001:9001"
+    volumes:
+       - /home/milan/Desktop/Tasks/geneva/edgex-deployment/containers/mqtt-broker/config:/mosquitto/config:ro
+       - /home/milan/Desktop/Tasks/geneva/edgex-deployment/containers/mqtt-broker/data:/mosquitto/data
+       - /home/milan/Desktop/Tasks/geneva/edgex-deployment/containers/mqtt-broker/log:/mosquitto/log
+volumes:
+    config:
+    data:
+    log:
+

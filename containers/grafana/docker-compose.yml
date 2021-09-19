@@ -1,0 +1,12 @@
+version: '2'
+
+services: 
+#Grafana
+  influxdb:
+    container_name: grafana
+    image: grafana/grafana:8.0.1-ubuntu
+    restart: always
+    network_mode: "host"
+    ports:
+       - "3000:3000"
+    
